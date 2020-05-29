@@ -5,8 +5,8 @@
     android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -32,6 +32,23 @@
 
             </LinearLayout>
         </ScrollView>
+
+        <Button
+            android:id="@+id/info_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="info"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"/>
+
+        <ListView
+            android:alpha="0"
+            android:id="@+id/info_list_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/info_button"
+            android:background="#99141414"/>
+
     </RelativeLayout>
 
 
@@ -48,6 +65,7 @@
             android:background="#000"/>
 
     </RelativeLayout>
+
 
 
 

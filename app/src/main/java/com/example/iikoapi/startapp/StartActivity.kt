@@ -1,17 +1,18 @@
 package com.example.iikoapi.startapp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.example.iikoapi.R
-import com.example.iikoapi.general.GeneralActivity
-import kotlinx.android.synthetic.main.activity_start.*
+import com.example.iikoapi.startapp.networking.MySingleton
+import com.example.iikoapi.startapp.networking.NetworkInteraction
+import com.example.iikoapi.startapp.networking.NukeSSLCerts
 
 
 class StartActivity : AppCompatActivity() {
+
+    lateinit var interact: NetworkInteraction
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -21,7 +22,12 @@ class StartActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
 
-        startActivity(Intent(this, GeneralActivity::class.java))
+        val S = MySingleton.getInstance(this)
+        NukeSSLCerts().nuke()
+
+        interact = NetworkInteraction(S, this)
+        interact.start()
+
 
     }
 }
