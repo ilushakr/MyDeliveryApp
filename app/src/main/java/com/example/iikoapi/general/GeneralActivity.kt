@@ -44,7 +44,9 @@ class GeneralActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.acces_menu -> {selectedFragment = MenuFragment(0); TAG = "1"}
                 R.id.contacts -> {selectedFragment = ContactsFragment(this); TAG = "2"}
-                R.id.basket ->{ selectedFragment = BasketFragment(navigationView); TAG = "3"}
+                R.id.profile ->{ selectedFragment = ProfileFragment(); TAG = "3"}
+                R.id.basket ->{ selectedFragment = BasketFragment(navigationView); TAG = "4"}
+
             }
 
             var fragmentTag = supportFragmentManager.findFragmentById(R.id.fragment_container)!!.tag

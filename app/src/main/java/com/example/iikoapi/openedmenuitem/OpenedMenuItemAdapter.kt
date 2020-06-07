@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.view.children
+import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -109,6 +110,9 @@ class OpenedMenuItemAdapter(private var items : List<Product>, private var conte
                 textName.setTextColor(Color.BLACK)
             }
             textName.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, (100 / data.size).toFloat())
+            lavashLayout.setPadding(10, 10, 10, 10)
+            lavashLayout.setBackgroundColor(Color.RED)
+            textName.gravity = Gravity.CENTER
             lavashLayout.addView(textName)
             textName.setBackgroundColor(Color.BLACK)
             textName.setTextColor(Color.WHITE)

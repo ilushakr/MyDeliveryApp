@@ -12,7 +12,7 @@ import com.example.iikoapi.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class BasketFragment(val navigationView: BottomNavigationView) : Fragment() {
+class BasketFragment(private val navigationView: BottomNavigationView) : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_basket, container, false)
 
