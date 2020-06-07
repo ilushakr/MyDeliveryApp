@@ -20,9 +20,10 @@ import javax.net.ssl.*
 lateinit var menu: MenuResponse
 
 class NetworkInteraction(val S: MySingleton, val context: Context) {
-    val url = "https://iiko.biz:9900/api/0/"
-    var login: Login =
+    private val url = "https://iiko.biz:9900/api/0/"
+    private var login: Login =
         Login(
+
             "demoDelivery",
             "PI1yFaKFCGvvJKi",
             null
@@ -41,6 +42,7 @@ class NetworkInteraction(val S: MySingleton, val context: Context) {
                 getOrgsList()
             },
             Response.ErrorListener { error ->
+                Log.d("tag", "volley arror: $error")
             }
         )
         S.addToRequestQueue(Request)
@@ -59,6 +61,7 @@ class NetworkInteraction(val S: MySingleton, val context: Context) {
                 getMenu(orgs.organisations.last().id)
             },
             Response.ErrorListener { error ->
+                Log.d("tag", "volley arror: $error")
             }
         )
         S.addToRequestQueue(Request)
@@ -74,24 +77,15 @@ class NetworkInteraction(val S: MySingleton, val context: Context) {
 //                this.menu = mapper.readValue(response)
                 menu = mapper.readValue(response)
                 context.startActivity(Intent(context, GeneralActivity::class.java))
-                sendData()
             },
             Response.ErrorListener { error ->
+                Log.d("tag", "volley arror: $error")
             }
 
         )
         S.addToRequestQueue(Request)
     }
 
-    fun sendData()
-    {
-        for (it in menu.products)
-
-            Log.d("image",it.images.toString())
-
-
-//        tex.text="REV. "+menu.revision.toString()
-    }
 }
 
 class NukeSSLCerts {

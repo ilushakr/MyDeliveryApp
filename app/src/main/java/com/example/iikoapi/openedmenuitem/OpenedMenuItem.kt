@@ -16,9 +16,8 @@ class OpenedMenuItem : AppCompatActivity() {
 
 
         var commonPos = intent.getIntExtra("comonPos", -1)
-
-        var introSlise = OpenedMenuItemAdapter(getProdsByCategory()[commonPos], this, commonPos)
-        opened_menu_item_pager.adapter = introSlise
+        var openedMenuItemAdapter = OpenedMenuItemAdapter(getProdsByCategory()[commonPos], this, commonPos)
+        opened_menu_item_pager.adapter = openedMenuItemAdapter
         opened_menu_item_pager.setCurrentItem(position, false)
 
     }

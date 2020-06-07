@@ -28,7 +28,6 @@ class MenuFragment(var position : Int) : Fragment() {
 //        viewPager2.orientation = ViewPager2.ORIENTATION_VERTICAL
 //        viewPager2.adapter = MenuAdapter(dd.values.toList())
         viewPager2.adapter = MenuAdapter(getProdsByCategory())
-
         viewPager2.setCurrentItem(position, false)
 
 

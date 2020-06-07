@@ -12,6 +12,10 @@
         android:title="Contacts"/>
 
     <item
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="Profile"/>
+    <item
         android:id="@+id/basket"
         android:icon="@drawable/ic_favorite_black_24dp"
         android:title="Basket"/>

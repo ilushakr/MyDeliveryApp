@@ -9,6 +9,7 @@
         android:layout_height="match_parent">
 
         <ScrollView
+            android:id="@+id/whole_lt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -18,11 +19,11 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
                     android:scaleType="fitXY"
                     android:id="@+id/image_inside"
-                    android:layout_marginLeft="100dp"/>
+                    android:layout_marginStart="100dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -30,31 +31,158 @@
                     android:textSize="50sp"
                     android:id="@+id/text_inside"/>
 
+                <Button
+                    android:layout_margin="20dp"
+                    android:id="@+id/info_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="info"
+                    android:layout_gravity="end"/>
+
+                <LinearLayout
+                    android:id="@+id/group_modifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100"/>
+
+                <TableLayout
+                    android:id="@+id/singled_modifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
             </LinearLayout>
+
         </ScrollView>
 
-        <Button
-            android:id="@+id/info_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="info"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"/>
 
-        <ListView
+<!--Info Fragment-->
+        <RelativeLayout
             android:alpha="0"
-            android:id="@+id/info_list_view"
-            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/info_fragment_RL"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="6dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/info_button"
-            android:background="#99141414"/>
+            android:background="#cf141414">
+
+            <TextView
+                android:textStyle="bold"
+                android:id="@+id/info_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="pizza"
+                android:textColor="@color/white"
+                android:paddingBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/text_nv"
+                android:layout_below="@+id/info_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The nutritional value per 100g:"
+                android:textColor="@color/white"
+                android:textSize="13dp"/>
+
+            <LinearLayout
+                android:layout_below="@+id/text_nv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="carbohydrates:"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="energy:"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="fats:"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="proteins:"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/info_carbohydrates"
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/info_energy"
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/info_fats"
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/info_proteins"
+                        android:layout_marginVertical="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+<!--Info Fragment-->
 
     </RelativeLayout>
 
-
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/RL"/>
+
 
         <ImageButton
             android:id="@+id/go_back"
@@ -63,11 +191,5 @@
             android:layout_margin="20dp"
             android:padding="20dp"
             android:background="#000"/>
-
-    </RelativeLayout>
-
-
-
-
 
 </RelativeLayout>
